@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- font-awesome allows you to import great icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="player-container">
+        <!-- TARGET THIS WAS JAVASCRIPT FOR CHANGING THE SONG --> 
+        <div class="img-container">
+            <img src="img/contra-1.jpg" alt="Album Art"/> 
+        </div>
+        <!-- TARGET THIS WITH JAVASCRIPT FOR CHANGING SONGS -->
+        <h2 id="title">STARTING TOMORROW</h2>
+        <h3 id="artist">CONTRA</h3>
+
+        <!-- TARGET THIS WITH JAVASCRIPT -->
+        <audio src="music/contra-1.mp3" ></audio>
+        <!-- This is for our progress bar, the logical container that holds the actual bar -->
+        <div class="progress-container" id="progress-container">
+            <!-- This is our actual progress bar -->
+            <div class="progress" id="progress">
+            <div class="duration-wrapper">
+                <!-- These values are currently hardcoded, but they should dynamically change based on the song -->
+            <div class="current-time">
+                <span id="current-time">0:00</span>
+            </div>
+            <div class="duration">
+                <span id="duration">6:00</span>
+            </div>
+            </div>
+        </div>
+        </div>
+        <!-- This is for our CONTROL BAR, where you can play, scrub, skip throughout the song -->
+        <!-- TARGET THIS WITH JAVASCRIPT -->
+        <div class="player-controls">
+            <!-- This is HTML given by font awesome on their website, when you click into the logo you want to use -->
+            <i class="fas fa-backward" id="prev" title="Previous"></i>
+            <!-- The main-button added below makes the button larger than the others -->
+            <i class="fas fa-play main-button" id="play" title="Play"></i>
+            <i class="fas fa-forward" id="next" title="Next"></i>
+        </div>
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

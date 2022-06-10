@@ -1,0 +1,150 @@
+/* Images created by: https://unsplash.com/@pawel_czerwinski */
+/* Import your fonts from Google fonts, using @import PLUS putting font-family: 'fontname', sans-serif; INTO the CSS portions where the font is used*/
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&family=Roboto:wght@600&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #c9ced3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Importing fonts for the body */
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 12px;
+}
+
+/* The reason why we're going 500px/400px is because most modern smartphones won't need to reformat the CSS upon rendering the program */
+.player-container {
+  height: 500px;
+  width: 400px;
+  background: #e3e3e4;
+  /* border-radius adds rounded corners to any element; use this to make your app look modern */
+  border-radius: 20px;
+  /* box-shadow looks great, gives a floating quality to your element. format is box-shadow: horizontal-offset, vertical-offset, blur/opacity in the shadow, spreading of shadow, color */
+  /* rgba(red, green, blue, opacity) */
+  box-shadow: 0 15px 30px 10px rgba(0,0,0,0.3);
+}
+
+.img-container {
+  /* When we're creating the image container, we want it to be a square, so we define the height and width */
+  height: 300px;
+  width: 300px;
+  position: relative;
+  top: -50px;
+  left: 50px;
+}
+
+/* This block of CSS targets the img tag within the img-container */
+.img-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  /* box-shadow looks great, gives a floating quality to your element. format is box-shadow: horizontal-offset, vertical-offset, blur/opacity in the shadow, spreading of shadow, color */
+  /* rgba(red, green, blue, opacity) */
+  box-shadow: 0 15px 30px 10px rgba(0,0,0,0.4);
+}
+
+h2 {
+  font-size: 25px;
+  text-align: center;
+  margin: 0;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 100;
+  /*Importing fonts for H3*/
+  font-family: 'Roboto', sans-serif;
+  margin: 5px 0 0;
+}
+
+/* Progress */
+.progress-container {
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 40px 20px;
+  height: 6px;
+  width: 90%;
+}
+
+.progress {
+  background: #242323;
+  border-radius: 5px;
+  height: 100%;
+  /* change with Javascript this to show progress */
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.duration-wrapper {
+  position: relative;
+  top: -25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.duration {
+  display: block;
+  margin-left: 285px;
+}
+
+/* Controls */
+.player-controls {
+  position: relative;
+  top: -15px;
+  left: 120px;
+  width: 200px;
+}
+
+.fas {
+  font-size: 30px;
+  color: rgb(129, 129, 129);
+  margin-right: 30px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* This makes it so when the font awesome buttons are hovered over, they increase by 80% in brightness, signaling the button is usable */
+.fas:hover {
+  filter: brightness(80%);
+}
+
+.main-button {
+  font-size: 40px;
+  position: relative;
+  top: 3px;
+}
+
+/* CSS = Cascading Style Sheets, so naturally, the definitions at the end override stylization defined above. */
+/* prior to adding the .player-container{width: 95vw;} below, the player was not fitting well on the iPhone, as seen in my Web Browser. This addition fits it to page with a cushion */
+/* Media Query: iPhone (Vertical) 376px is perfect max-width for iPhone */
+@media screen and (max-width: 376px) {
+  .player-container {
+    width: 90vw;
+  }
+
+  .img-container {
+    left: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+  .player-controls {
+    top: -10px;
+    left: 100px;
+  }
+}
